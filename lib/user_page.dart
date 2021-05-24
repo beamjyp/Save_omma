@@ -26,18 +26,7 @@ class _User_page extends State<User_page> {
                   ),
                   backgroundColor: Colors.white,
                 ),
-                otherAccountsPictures: <Widget>[
-                  CircleAvatar(
-                    child: Text("N"),
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.orange,
-                  ),
-                  CircleAvatar(
-                    child: Icon(Icons.add),
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.grey,
-                  )
-                ],
+                otherAccountsPictures: <Widget>[],
               ),
               ListTile(title: Text('Item 1'), onTap: () {}),
               ListTile(
@@ -49,8 +38,12 @@ class _User_page extends State<User_page> {
                 child: Align(
                   alignment: Alignment.bottomLeft,
                   child: ListTile(
-                    title: Text('Item 3'),
-                    onTap: () {},
+                    title: Text('ออกจากระบบ'),
+                    onTap: () {
+                      Navigator.pop(
+                        context,
+                      );
+                    },
                   ),
                 ),
               ),

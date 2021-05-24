@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 import 'regis.dart';
+import 'sidebar_layout.dart';
 import 'user_page.dart';
 
 void main() {
@@ -17,11 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ChangeNotifierProvider(
-        create: (context) => CounterProvider(counter: 0),
-        child: MyHomePage(title: "My Home"),
-      ),
+      theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white, primaryColor: Colors.white),
+      home: MyHomePage(),
     );
   }
 }
@@ -45,7 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget build(BuildContext context) {
-    CounterProvider counterProvider = Provider.of<CounterProvider>(context);
     TextEditingController idCheckController = TextEditingController();
     TextEditingController passCheckController = TextEditingController();
 
@@ -150,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return User_page();
+                          return SideBarLayout();
                         },
                       ),
                     );
@@ -222,14 +219,5 @@ class TextFieldContainer extends StatelessWidget {
           color: Colors.white, borderRadius: BorderRadius.circular(25)),
       child: child,
     );
-  }
-}
-
-class CounterProvider with ChangeNotifier {
-  int counter;
-  CounterProvider({this.counter = 0});
-  increment() {
-    counter++;
-    notifyListeners();
   }
 }
