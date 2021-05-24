@@ -106,35 +106,107 @@ class _SideBarState extends State<SideBar>
                           indent: 32,
                           endIndent: 32,
                         ),
-                        MenuItem(
-                          icon: Icons.home_rounded,
-                          title: "หน้าหลัก",
-                          onTap: () {
-                            onIconPressed();
-                            BlocProvider.of<NavigationBloc>(context)
-                                .add(NavigationEvents.HomePageClickedEvent);
-                          },
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.home_rounded,
+                                  size: 32,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                InkWell(
+                                  child: Text(
+                                    'หน้าหลัก',
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontFamily: 'Mitr',
+                                        color: Colors.white),
+                                  ),
+                                  onTap: () {
+                                    onIconPressed();
+                                    BlocProvider.of<NavigationBloc>(context)
+                                        .add(NavigationEvents
+                                            .HomePageClickedEvent);
+                                  },
+                                )
+                              ],
+                            ),
+                          ),
                         ),
-                        MenuItem(
-                          icon: Icons.person_pin_rounded,
-                          title: "แก้ไขโปรไฟล์แม่",
-                          onTap: () {
-                            onIconPressed();
-                            BlocProvider.of<NavigationBloc>(context)
-                                .add(NavigationEvents.SettingMomClickedEvent);
-                          },
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.person_pin_rounded,
+                                  size: 32,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                InkWell(
+                                  child: Text(
+                                    'แก้ไขโปรไฟล์แม่',
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontFamily: 'Mitr',
+                                        color: Colors.white),
+                                  ),
+                                  onTap: () {
+                                    onIconPressed();
+                                    BlocProvider.of<NavigationBloc>(context)
+                                        .add(NavigationEvents
+                                            .SettingMomClickedEvent);
+                                  },
+                                )
+                              ],
+                            ),
+                          ),
                         ),
-                        MenuItem(
-                          icon: Icons.map,
-                          title: "โรงพยาบาลใกล้เคียง",
-                          onTap: () {
-                            onIconPressed();
-                            BlocProvider.of<NavigationBloc>(context)
-                                .add(NavigationEvents.HospitalClickedEvent);
-                          },
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.map,
+                                  size: 32,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                InkWell(
+                                  child: Text(
+                                    'โรงพยาบาลใกล้เคียง',
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontFamily: 'Mitr',
+                                        color: Colors.white),
+                                  ),
+                                  onTap: () {
+                                    onIconPressed();
+                                    BlocProvider.of<NavigationBloc>(context)
+                                        .add(NavigationEvents
+                                            .HospitalClickedEvent);
+                                  },
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                         SizedBox(
-                          height: 200,
+                          height: 240,
                         ),
                         Divider(
                           height: 30,
@@ -143,19 +215,36 @@ class _SideBarState extends State<SideBar>
                           indent: 32,
                           endIndent: 32,
                         ),
-                        MenuItem(
-                          icon: Icons.exit_to_app,
-                          title: "ออกจากระบบ",
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return MyApp();
-                                },
-                              ),
-                            );
-                          },
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.exit_to_app,
+                                  size: 32,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                InkWell(
+                                  child: Text(
+                                    'ออกจากระบบ',
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontFamily: 'Mitr',
+                                        color: Colors.white),
+                                  ),
+                                  onTap: () {
+                                    Navigator.of(context)
+                                        .popUntil(ModalRoute.withName('/'));
+                                  },
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       ],
                     ),
