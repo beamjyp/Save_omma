@@ -83,6 +83,7 @@ class HomePage extends StatelessWidget with NavigationStates {
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(15),
                                     child: ExpansionTile(
+                                      initiallyExpanded: false,
                                       backgroundColor: Colors.black,
                                       title: Text(
                                         'ประวัติคัดกรอง/ทำไมถึงเสี่ยง',
@@ -90,7 +91,26 @@ class HomePage extends StatelessWidget with NavigationStates {
                                             fontFamily: 'Mitr',
                                             color: Colors.white),
                                       ),
-                                      children: [Text('ท่านฝากครรภ์หรือยัง')],
+                                      children: [
+                                        Text(
+                                          'ท่านฝากครรภ์หรือยัง',
+                                          style: TextStyle(
+                                              fontFamily: 'Mitr',
+                                              color: Colors.white),
+                                        ),
+                                        Row(children: [
+                                          Container(
+                                            margin:
+                                                const EdgeInsets.only(left: 16),
+                                            child: Text(
+                                              'test',
+                                              style: TextStyle(
+                                                  fontFamily: 'Mitr',
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        ]),
+                                      ],
                                     ),
                                   ),
                                 ],
